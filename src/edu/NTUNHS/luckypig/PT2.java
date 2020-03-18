@@ -10,6 +10,7 @@ public class PT2 {
 		double chScore = sc1.nextDouble();
 		double enScore = sc1.nextDouble();
 		double mathScore = sc1.nextDouble();
+		sc1.close();
 		double total = chScore + enScore + mathScore;
 		System.out.println("Total:"+ total + "Average:"+ total/3);
 	}
