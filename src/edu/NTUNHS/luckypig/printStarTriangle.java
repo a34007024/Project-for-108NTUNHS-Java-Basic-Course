@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * printStarPyramid
  */
-public class printStarPyramid {
+public class printStarTriangle {
     public static void main(String[] args) {
         Scanner sc1 = new Scanner(System.in);
         System.out.println("請輸入要幾層三角形:");
