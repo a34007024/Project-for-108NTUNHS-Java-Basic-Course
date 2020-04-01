@@ -9,7 +9,7 @@ public class HW3_2 {
     public static void main(String[] args) {
         long[] f = new long[100];
         f[0] = 0;f[1] = 1;
-        System.out.println("請輸入一個數");
+        System.out.print("求第n層的費氏數列，請輸入一個數字:");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.close();
