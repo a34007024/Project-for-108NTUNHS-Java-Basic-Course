@@ -9,6 +9,7 @@ public class Global_Variable_VS_Local_Variable {
     static void method(){
         int v2 = 0;
         v2 = 10;
+        System.out.println("v2=" + v2);
     }
     static void method2(){
         int v3 = 0;
@@ -20,6 +21,7 @@ public class Global_Variable_VS_Local_Variable {
     public static void main(String[] args) {
         v1 += 1;
         System.out.println("v1=" + v1);
+        method();
         method2();
     }
 }
