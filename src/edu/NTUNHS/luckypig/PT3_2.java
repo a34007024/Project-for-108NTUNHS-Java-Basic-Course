@@ -18,8 +18,14 @@ public class PT3_2 {
                 System.out.println("");
             }
         } else if (input.equals("b")) {
-            for (int i = n; i > 0; i--) {
-                //to-do 完成倒三角形的輸出模式
+            for (int i = 0; i < n; i++) {//層數
+                for(int j=0;j<i;j++){
+                    System.out.print(" ");
+                }
+                for(int h = n-i ; h>0;h--){
+                    System.out.print("*");
+                }
+                System.out.println("");//換行
             }
         } else if (input.equals("c")) {
             int outputNumber = 1;
