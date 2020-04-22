@@ -7,9 +7,9 @@ public class for_each {
             c[i] = i;
         }
 
-        for(int j : c){//for-each loop
-            System.out.println("c[" + j + "]=" + c[j]);
-        };
+        for (char charElement : c) {//for-each loop 裡面的變數是直接用來撈取陣列內的值
+            System.out.print(charElement + "\t");
+        }
     }
 
 }
