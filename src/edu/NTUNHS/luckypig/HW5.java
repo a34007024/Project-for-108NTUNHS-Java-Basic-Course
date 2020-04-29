@@ -22,17 +22,17 @@ public class HW5 {
             System.out.println(average[i]);
         }
         System.out.println("======以上為預設排序======");
-        float[] sortedAV = average;
+        float[] sortedAV = average.clone();//java陣列複製必須用.clone()方法,否則直接sortedAV = average只會把記憶體位址指派過去
         Arrays.sort(sortedAV);
         int[][] sortedScore = new int[5][5];
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-                if(average[i] == sortedAV[j]){
-                    sortedScore[j][0] = score[i][0];
-                    sortedScore[j][1] = score[i][1];
-                    sortedScore[j][2] = score[i][2];
-                    sortedScore[j][3] = score[i][3];
-                    sortedScore[j][4] = score[i][4];
+                if(sortedAV[i] == average[j]){
+                    sortedScore[i][0] = score[j][0];
+                    sortedScore[i][1] = score[j][1];
+                    sortedScore[i][2] = score[j][2];
+                    sortedScore[i][3] = score[j][3];
+                    sortedScore[i][4] = score[j][4];
                 }
             }
         }
@@ -41,7 +41,8 @@ public class HW5 {
             for (int j = 0; j < 5; j++) {
                 System.out.print(sortedScore[i][j] + "\t");
             }
-            System.out.println(sortedAV[i]);
+            System.out.println(sortedAV[i] + "\t");
         }
+        System.out.println("average的記憶以位置為：" + average);
     }
 }
