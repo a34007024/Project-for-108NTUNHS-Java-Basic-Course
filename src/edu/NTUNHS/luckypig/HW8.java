@@ -19,21 +19,21 @@ public class HW8 {
                 System.out.println("請輸入要加密的文字:");
                 input = sc.nextLine();
                 System.out.println("加密後的字串為:");
-                System.out.println(encrypt(input, 1));
+                System.out.println(encrypt(input));
                 break;
             case "2":
                 System.out.println("請輸入要解密的文字:");
                 input = sc.nextLine();
                 System.out.println("解密後的字串為:");
-                System.out.println(encrypt(input, -1));
+                System.out.println(decrypt(input));
                 break;
             case "3":
                 System.out.println("請輸入要加解密的文字:");
                 input = sc.nextLine();
                 System.out.println("加密後的字串為:");
-                System.out.println(encrypt(input, 1));
+                System.out.println(encrypt(input));
                 System.out.println("解密後的字串為:");
-                System.out.println(encrypt(encrypt(input, 1), -1));
+                System.out.println(decrypt(encrypt(input)));
                 break;
             default:
                 System.out.println("輸入有誤喔!請檢查(小提示:不用輸入.喔!)");
@@ -42,20 +42,19 @@ public class HW8 {
         sc.close();
     }
 
-    public static String encrypt(String input, int i_encrypt) {
-        // i_encrypt是指要位移幾個位元，感謝鑫哥提供此想法!
+    public static String encrypt(String input) {
         char[] chArray = input.toCharArray();
         String encryptedString = "";
         for (int i = 0; i < chArray.length; i++) {
-            // 位移位元
+            // 位移位元(往後移一個位元)
             if ((int) chArray[i] == 90)// Z
-                chArray[i] = (char) (65 + i_encrypt - 1);// 修正使用者自訂位移位元
+                chArray[i] = (char) (65);
             else if ((int) chArray[i] == 122)// z
-                chArray[i] = (char) (97 + i_encrypt - 1);// 修正使用者自訂位移位元
+                chArray[i] = (char) (97);
             else if ((int) chArray[i] == 32)
                 chArray[i] = chArray[i];// 空白字元不轉換
             else
-                chArray[i] = (char) ((int) chArray[i] + i_encrypt);
+                chArray[i] = (char) ((int) chArray[i] + 1);
             // 大小寫轉換
             if ((int) chArray[i] >= 65 && (int) chArray[i] <= 90) {
                 chArray[i] = Character.toLowerCase(chArray[i]);
@@ -66,5 +65,30 @@ public class HW8 {
             // https://stackoverflow.com/questions/17984975/convert-int-to-char-in-java
         }
         return encryptedString;
+    }
+
+    public static String decrypt(String input) {
+        char[] chArray = input.toCharArray();
+        String decryptedString = "";
+        for (int i = 0; i < chArray.length; i++) {
+            // 位移位元(往前移一個位元)
+            if ((int) chArray[i] == 65)// A
+                chArray[i] = (char) (90);
+            else if ((int) chArray[i] == 97)// a
+                chArray[i] = (char) (122);
+            else if ((int) chArray[i] == 32)
+                chArray[i] = chArray[i];// 空白字元不轉換
+            else
+                chArray[i] = (char) ((int) chArray[i] - 1);
+            // 大小寫轉換
+            if ((int) chArray[i] >= 65 && (int) chArray[i] <= 90) {
+                chArray[i] = Character.toLowerCase(chArray[i]);
+            } else if ((int) chArray[i] >= 97 && (int) chArray[i] <= 122) {
+                chArray[i] = Character.toUpperCase(chArray[i]);
+            }
+            decryptedString += chArray[i];
+            // https://stackoverflow.com/questions/17984975/convert-int-to-char-in-java
+        }
+        return decryptedString;
     }
 }
