@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class HW8 {
     public static void main(String[] args) {
+        // TODO ask user to encrypt or decrypt
         System.out.println("請輸入由PT8_2加密過的文字:");
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
