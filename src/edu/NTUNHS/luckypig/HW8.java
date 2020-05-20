@@ -1,5 +1,4 @@
 package edu.NTUNHS.luckypig;
-
 import java.util.Scanner;
 
 public class HW8 {
@@ -10,6 +9,8 @@ public class HW8 {
         sc.close();
         System.out.println("解密過後的字串為:");
         System.out.println(caeserDecrypt(input));
+        System.out.println("反轉後的解密字串為:");
+        System.out.println(PT8_2.reverseString(caeserDecrypt(input)));
     }
     public static String caeserDecrypt(String input){
         char[] chArray = input.toCharArray();
