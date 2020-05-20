@@ -39,11 +39,11 @@ public class stringCombine {
         String[] splitStr = strTemp.split("。");
         for (int i = 0; i < splitStr.length; i++) {
             System.out.println(i + ":" + splitStr[i]);
+            if(splitStr[i].equals("西風")) System.out.println("西風在第"+i+"個位置");
         }
 
         System.out.println("====將字串中的「昏鴉」取代為「烏鴉」=======");
         strTemp = strResult.replace("昏鴉", "烏鴉");
         System.out.println("取代後，新字串的內容是：" + strTemp + "\n");
-        System.out.println("西風在第7個");
     }
 }
