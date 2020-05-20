@@ -10,20 +10,32 @@ public class PT8_2 {
         sc.close();
         System.out.println("加密過後的字串為:");
         System.out.println(caeserCipher(input));
+        System.out.println("反轉過後的加密字串為:");
+        System.out.println(reverseString(caeserCipher(input)));
     }
-    public static String caeserCipher(String input){
+
+    public static String caeserCipher(String input) {
         char[] chArray = input.toCharArray();
         String cipherTextStr = "";
         for (int i = 0; i < chArray.length; i++) {
-            if ((int) chArray[i] == 90)//Z
-                chArray[i] = (char)65;
-            else if ((int) chArray[i] == 122)//z
-                chArray[i] = (char)97;
+            if ((int) chArray[i] == 90)// Z
+                chArray[i] = (char) 65;
+            else if ((int) chArray[i] == 122)// z
+                chArray[i] = (char) 97;
             else
                 chArray[i] = (char) ((int) chArray[i] + 1);
             // https://stackoverflow.com/questions/17984975/convert-int-to-char-in-java
             cipherTextStr += chArray[i];
-        }
+        }   
         return cipherTextStr;
+    }
+
+    public static String reverseString(String originalString){
+        char[] chArray = originalString.toCharArray();
+        String reversedString = "";
+        for (int i = chArray.length - 1; i >= 0; i--){
+            reversedString += chArray[i];
+        }
+        return reversedString;
     }
 }
