@@ -4,9 +4,10 @@ public class WORK06_02
 {   // 主程式
     public static void main(String[] args)
     {   // 宣告Birthday類別型態的變數
-        Birthday andy,michael;
+        Birthday andy,michael,Fish;
         andy = new Birthday();  // 建立物件
         michael = new Birthday();
+        Fish = new Birthday(89, 10, 18);
         andy.year = 62;
         andy.month =7;
         andy.day = 23;
@@ -18,5 +19,7 @@ public class WORK06_02
         andy.printBirthday();
         System.out.print("Michael的出生年月日= ");
         michael.printBirthday();
+        System.out.print("Fish的出生年月日= ");
+        Fish.printBirthday();
     }
 }
