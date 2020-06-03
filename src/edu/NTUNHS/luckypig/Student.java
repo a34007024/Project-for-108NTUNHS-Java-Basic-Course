@@ -5,11 +5,19 @@ public class Student extends Person {
     private double englishScore;
     private double mathScore;
 
-    Student() {
-
+    Student(String name) {
+        super(name);
     }
 
     Student(double chScore, double enScore, double mathSC) {
+        // super();//name will automatic set to "null"
+        this.chineseScore = chScore;
+        this.englishScore = enScore;
+        this.mathScore = mathSC;
+    }
+
+    Student(String name, double chScore, double enScore, double mathSC) {
+        super(name);//super()是指父類別的建構子，可以去參閱Person.java內的建構子
         this.chineseScore = chScore;
         this.englishScore = enScore;
         this.mathScore = mathSC;
@@ -23,7 +31,7 @@ public class Student extends Person {
         return (chineseScore + englishScore + mathScore) / 3;
     }
 
-    public void printSum(){
-        System.out.println(name + "的總分為:"+ getSum() +"分");
+    public void printSum() {
+        System.out.println(name + "的總分為:" + getSum() + "分");
     }
 }
