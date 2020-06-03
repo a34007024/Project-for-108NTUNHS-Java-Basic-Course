@@ -4,6 +4,9 @@ public class Person {
     protected String name;//protected 表示自己和繼承的子類別可以存取
     private double height;
     private double weight;
+    Person(){
+        name = "null";
+    }
     Person(String name){
         this.name = name;
     }
