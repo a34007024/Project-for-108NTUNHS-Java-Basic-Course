@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class HW8 {
     public static void main(String[] args) {
-        // TODO ask user to encrypt or decrypt
         /*
          * 寫一個程式，讓使用者選擇要加密還解密 分別用兩個副程式來做 選擇完後讓使用者輸入字串後執行
          * 
